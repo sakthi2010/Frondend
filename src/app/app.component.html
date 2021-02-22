@@ -1,0 +1,47 @@
+
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <img src="../assets/logo.jpeg" />
+        <span class="example-spacer"></span>
+        <a mat-button routerLink="home">Home</a>  
+    <a mat-button routerLink="About">About Us</a>
+    <a mat-button routerLink="services">service</a>
+    <button mat-button [matMenuTriggerFor]="belowMenu">Jobs</button>
+<mat-menu #belowMenu="matMenu" yPosition="below">
+  <button mat-menu-item data-toggle="modal" data-target="#myModal">Voice Technologies</button>
+  <button mat-menu-item>Image Analytices</button>
+</mat-menu>
+    <a mat-button routerLink="Contact">Contact Us</a>
+    <a mat-button routerLink="Login">Login</a>
+       
+      </mat-toolbar-row>
+
+</mat-toolbar>
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Upload Resume...</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <form action="/action_page.php">
+          <input type="file" id="myFile" name="filename">
+          <input type="submit">
+        </form>
+        
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>
