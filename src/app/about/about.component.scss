@@ -1,7 +1,13 @@
 .row
 {
   font-style: normal; 
-font-size: larger;
-text-align: left;
+font-size:large;
+text-align: center;
+color:black;
 margin-left: 10px;
+  min-height: 90vh;
+  background: url('../../assets/abouts.jpg');
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
 }
