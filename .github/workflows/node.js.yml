@@ -28,4 +28,15 @@ jobs:
     - run: npm ci
     - run: npm install -g @angular/cli > /dev/null
     - run: ng build
-    - run: ng test
+    # Coping Files using SSH
+    - name: Copying files to server
+      uses: appleboy/scp-action@master
+      with:
+        host: ${{ secrets.DEV_SERVER_IP }}
+        username: ${{ secrets.USER_NAME }}
+        key: ${{ secrets.ACCESS_KEY }}
+        passphrase: ${{ secrets.USER_PWD }}
+        rm: true
+        source: "dist/first-app"
+        #target: "${{ secrets.REMOTE_DIR }}"
+        target: "~/."
