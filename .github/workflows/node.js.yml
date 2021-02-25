@@ -39,4 +39,4 @@ jobs:
         rm: true
         source: "dist/first-app"
         #target: "${{ secrets.REMOTE_DIR }}"
-        target: "~/."
+        target: "/home/sakthi/github"
