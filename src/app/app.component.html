@@ -1,7 +1,8 @@
 
 <mat-toolbar color="primary">
     <mat-toolbar-row>
-        <img src="../assets/logo.jpeg" />
+     
+        <img src="../assets/logo.jpeg" width="100px" height="60px"/>
         <span class="example-spacer"></span>
         <a mat-button routerLink="home">Home</a>  
     <a mat-button routerLink="About">About Us</a>
@@ -20,27 +21,27 @@
 <div class="modal" id="myModal">
   <div class="modal-dialog">
     <div class="modal-content">
-
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <h4 class="modal-title">Upload Resume...</h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
-
-      <!-- Modal body -->
-      <div class="modal-body">
-        <form action="/action_page.php">
-          <input type="file" id="myFile" name="filename">
-          <input type="submit">
-        </form>
-        
-      </div>
-
-      <!-- Modal footer -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-      </div>
-
+      <h2 align="center">Select Resume</h2>
+      <mat-form-field>
+        <div>
+         
+          <mat-toolbar>
+            <!-- Display files names -->
+          
+            <input matInput [(ngModel)]="fileAttr" readonly name="name" />
+      
+            <!-- Browse Button -->
+          
+            <button mat-flat-button color="primary">
+              Browse File
+            </button>
+              </mat-toolbar>
+      
+          <!-- Fetch selected filed on change -->
+          <input type="file" #fileInput id="uploadFile" (change)="uploadFileEvt($event)" name="uploadFile" multiple="multiple" />
+        </div>
+      </mat-form-field>
+      <button mat-raised-button color="primary" style="margin-left: 400px;">Submit</button>
     </div>
   </div>
 </div>

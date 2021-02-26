@@ -1,15 +1,6 @@
-
+<div class="row">
  <div class="col-md-6">
-			<div class="col-md-6 mx-auto">
-			<h2 class="text-left">Google Map</h2>
-			<div class="card mt-3">
-				<div class="card-body">
-					<div #mapRef style="width:100%;height:400px"></div>
-				</div>
-			</div>
-		</div>
-	
-			 <div class="container" ng-app="ContactForm">
+			<div class="container" ng-app="ContactForm">
 	<h1 align="center"> Contact Us</h1>
 	<form name="cf" ng-controller="cfController as cfCtrl" ng-submit="submitForm(cf.$valid)" novalidate>
 		<div class="form-group">
@@ -28,3 +19,15 @@
 	</form>
 </div>
  </div>
+ 
+ <div class="col-md-6 mx-auto">
+	<h2 class="text-center">Google Map</h2>
+	<div class="card mt-3">
+		<div class="card-body">
+			<img src="assets/map.png" style="width: 100%; height: 300px;">
+			<a href="https://goo.gl/maps/VSWYBUsoVic2C47BA" target="_blank">T1 - 2nd floor 67 kaveri Street Saligramam chennai 600093</a>
+			<div #mapRef style="width:100%;height:10px"></div>
+		</div>
+	</div>
+	</div>
+</div>

@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, Component } from '@angular/core';
+import { NgModule, Component,CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -16,12 +16,14 @@ import { AboutComponent } from './about/about.component';
 import { ServicesComponent } from './services/services.component';
 import { LoginComponent } from './login/login.component';
 import { ContactComponent } from './contact/contact.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule} from '@angular/forms';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { HttpClientModule } from '@angular/common/http';
 import {MatDialogModule} from '@angular/material/dialog';
+// import {AfterViewInit, ElementRef, ViewChild,} from '@angular/core';
 const routes: Routes = [
+
   {
     path : '',
     redirectTo : 'home',
@@ -53,15 +55,18 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     AppRoutingModule,
+    RouterModule.forRoot(routes),
     BrowserAnimationsModule,
     MatButtonModule,MatFormFieldModule,
     MatCardModule,FormsModule,
-    MatToolbarModule,RouterModule.forRoot(routes),
+    MatToolbarModule,
     MatIconModule,MatInputModule,
      MatListModule,MatMenuModule,MatGridListModule,
-     HttpClientModule,MatDialogModule,
+     HttpClientModule,MatDialogModule, 
+     ReactiveFormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule { }

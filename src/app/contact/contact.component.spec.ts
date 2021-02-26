@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ContactComponent } from './contact.component';
+import {AfterViewInit, Component, ElementRef, ViewChild, OnInit} from '@angular/core';
+
 
 describe('ContactComponent', () => {
   let component: ContactComponent;
