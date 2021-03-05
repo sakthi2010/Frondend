@@ -37,6 +37,8 @@ password: string;
       console.log("resposne ",res);
       if(res['status']=='Success'){
           this.router.navigate(['/home']);
+          let userData=JSON.stringify(res['data']['rows']);
+          localStorage.setItem("user_data",userData);
       }
     })
     console.log("username ",this.username);
