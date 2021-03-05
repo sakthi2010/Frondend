@@ -9,7 +9,7 @@ export class LoginServiceService {
   constructor(private http: HttpClient) { }
 
   getLogin(data){
-    return this.http.post('https://niranaapi.nstore.in',data);
+    return this.http.post('https://niranaapi.nstore.in/api/login',data);
   }
 
   uploadFiles(data) {
@@ -17,7 +17,7 @@ export class LoginServiceService {
     const payload = new FormData();
     console.log("data ",data);
     // data.files.forEach(data.files, (item) => {
-      payload.append('files',data.files[0]);
+      payload.append('files',data.files);
     // });
     return this.http.post(url, payload);
   }
