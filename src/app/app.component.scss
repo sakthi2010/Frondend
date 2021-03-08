@@ -3,8 +3,9 @@
     padding: 0  25px;
   }
   .example-spacer {
-        flex:  1 1 auto;
+        flex:  3 3 auto;
   }
+  
   .mat-drawer-container {
     background-color: #daa8b3;
     
@@ -18,9 +19,10 @@
   width: 400px !important;
 }
 
-.mat-toolbar-single-row {
+.mat-toolbar-row {
   height: auto !important;
   background: transparent;
+  background-size:contain;
   color: black;
 }
 

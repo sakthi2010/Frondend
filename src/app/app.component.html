@@ -1,11 +1,12 @@
-<mat-toolbar color="primary">
+<meta name=viewport content='width=470'>
+<mat-toolbar color="primary" width="100%">
     <mat-toolbar-row>
              <img src="../assets/logo.jpeg" width="100px" height="60px"/>
         <span class="example-spacer"></span>
                 <a mat-button routerLink="home">Home</a>  
     <a mat-button routerLink="About">About Us</a>
     <a mat-button routerLink="services">service</a>
-    <button mat-button [matMenuTriggerFor]="belowMenu">Jobs</button>
+           <button mat-button [matMenuTriggerFor]="belowMenu">Jobs</button>
 <mat-menu #belowMenu="matMenu" yPosition="below">
   <button mat-menu-item data-toggle="modal" data-target="#myModal">Voice Technologies</button>
   <button mat-menu-item>Image Analytices</button>
