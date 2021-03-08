@@ -7,13 +7,15 @@ import { HttpClient } from '@angular/common/http';
 export class LoginServiceService {
 
   constructor(private http: HttpClient) { }
+// https://niranaapi.nstore.in - live
+// http://localhost:3000 - local
 
   getLogin(data){
-    return this.http.post('http://localhost:3000/api/login',data);
+    return this.http.post('https://niranaapi.nstore.in/api/login',data);
   }
 
   uploadFiles(data) {
-    const url = 'http://localhost:3000/upload';
+    const url = 'https://niranaapi.nstore.in/upload';
     const payload = new FormData();
     console.log("data ",data);
     // data.files.forEach(data.files, (item) => {
