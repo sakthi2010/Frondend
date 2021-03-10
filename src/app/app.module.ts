@@ -21,6 +21,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { HttpClientModule } from '@angular/common/http';
 import {MatDialogModule} from '@angular/material/dialog';
+import { ToastrModule } from 'ngx-toastr';
 // import {AfterViewInit, ElementRef, ViewChild,} from '@angular/core';
 const routes: Routes = [
 
@@ -63,7 +64,10 @@ const routes: Routes = [
     MatIconModule,MatInputModule,
      MatListModule,MatMenuModule,MatGridListModule,
      HttpClientModule,MatDialogModule, 
-     ReactiveFormsModule
+     ReactiveFormsModule,
+     ToastrModule.forRoot({
+       closeButton: true,
+     })
   ],
   providers: [],
   bootstrap: [AppComponent],

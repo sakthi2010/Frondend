@@ -18,9 +18,9 @@ export class HomeComponent implements OnInit {
   // url="./assets/images.jpg"
 
   getUsers(){
-    this.http.get('http://localhost:3000/api/user').subscribe(res=>{
-      console.log("res users ",res);
-    })
+    // this.http.get('http://localhost:3000/api/user').subscribe(res=>{
+    //   console.log("res users ",res);
+    // })
   }
 
 }

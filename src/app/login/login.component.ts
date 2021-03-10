@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import { LoginServiceService } from '../services/login-service.service';
 import { FormControl, FormGroup } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -13,6 +14,7 @@ export class LoginComponent implements OnInit {
   loginForm : FormGroup;
 
    constructor(
+     private toastr:ToastrService,
     private router: Router,
     private loginService : LoginServiceService
     ) { }
@@ -40,8 +42,12 @@ password: string;
           let userData=JSON.stringify(res['data']['rows']);
           localStorage.setItem("user_data",userData);
       }
+    }, 
+        (err) => {
+      console.log('errroro block')
+      this.toastr.error('Invalid username or password!');
     })
-    console.log("username ",this.username);
+      console.log("username ",this.username);
 
   }
   }
