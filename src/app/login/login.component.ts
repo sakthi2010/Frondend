@@ -43,9 +43,10 @@ password: string;
           localStorage.setItem("user_data",userData);
       }
     }, 
+    
         (err) => {
-      console.log('errroro block')
-      this.toastr.error('Invalid username or password!');
+            this.toastr.warning('Invalid username or password!');
+            
     })
       console.log("username ",this.username);
 

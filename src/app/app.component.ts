@@ -22,6 +22,7 @@ export class AppComponent implements OnInit {
 //   updatedAt: undefined,
 //   username:undefined,
 // };
+@ViewChild('closebutton') closebutton;
 
   constructor(private fb : FormBuilder,private service : LoginServiceService){}
 
@@ -31,13 +32,20 @@ export class AppComponent implements OnInit {
       files : ['',Validators.required]
     })
   }
+
+  public onClose() {
+    this.closebutton.nativeElement.click();
+  }
  
   onFileSelected(event) {
+    this.onClose();
     this.uploadedFiles = []
     if (event.target.files.length > 0) {
       const files = event.target.files;
-      const filenames = [];
-      console.log("onimage ",event);
+      // const filenames = [];
+      // let fileList: FileList = event.target.files;
+      // let file: File = fileList[0];
+      // console.log("onimage ",event);
       // _.forEach(files, (el) => {
       //   this.uploadedImages.push(el.name);
       // });
@@ -47,8 +55,11 @@ export class AppComponent implements OnInit {
   }
 
   uploadFiles(){
-    this.service.uploadFiles(this.uploadForm.value).subscribe(res=>{
+    console.log(this.uploadForm.value.files);
+    let file = this.uploadForm.value;
+    this.service.uploadFiles(file).subscribe(res=>{
       console.log("upload res ",res);
+      // this.onClose();
     })
   }
 

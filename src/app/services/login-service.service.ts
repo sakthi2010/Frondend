@@ -15,12 +15,19 @@ export class LoginServiceService {
   }
 
   uploadFiles(data) {
+    console.log(data);
     const url = 'https://niranaapi.nstore.in/upload';
-    const payload = new FormData();
-    console.log("data ",data);
+    let payload:any = new FormData();
+    payload.append('files', data.files[0]);
+    console.log("data payload-------> ",payload);
     // data.files.forEach(data.files, (item) => {
-      payload.append('files',data.files);
+      // payload.append('files',data.files);
     // });
-    return this.http.post(url, payload);
+    return this.http.post(url, payload, {
+      // headers: {
+      //   'Content-Type': 'multipart/form-data'
+      // }
+      
+    });
   }
 }

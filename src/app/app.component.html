@@ -3,16 +3,19 @@
     <mat-toolbar-row>
              <img src="../assets/logo.jpeg" width="100px" height="60px"/>
         <span class="example-spacer"></span>
-                <a mat-button routerLink="home">Home</a>  
-    <a mat-button routerLink="About">About Us</a>
+                <a mat-button routerLink="home">Home</a> 
+                <a mat-button routerLink="About">About Us</a>
     <a mat-button routerLink="services">service</a>
            <button mat-button [matMenuTriggerFor]="belowMenu">Jobs</button>
 <mat-menu #belowMenu="matMenu" yPosition="below">
   <button mat-menu-item data-toggle="modal" data-target="#myModal">Voice Technologies</button>
+  <button type="button" #closebutton class="close" data-dismiss="modal">&times;</button>
+         
   <button mat-menu-item>Image Analytices</button>
 </mat-menu>
     <a mat-button routerLink="Contact">Contact</a>
     <a mat-button routerLink="Login">Login</a>
+    
        </mat-toolbar-row>
 </mat-toolbar>
  <div class="modal" id="myModal">
@@ -21,25 +24,27 @@
       <form [formGroup]="uploadForm"></form>
       <h2 align="center">Select Resume..</h2>
       <mat-form-field>
-        <div>
+        <div style="padding: 20px;">
          
-          <mat-toolbar>
+          <!-- <mat-toolbar> -->
             <!-- Display files names -->
           
-            <input matInput readonly name="name" />
+            <input matInput readonly name="file" />
       
             <!-- Browse Button -->
           
-            <button mat-flat-button color="primary">
+            <button mat-raised-button>
               Browse File
             </button>
-              </mat-toolbar>
+              <!-- </mat-toolbar> -->
       
           <!-- Fetch selected filed on change -->
-          <input type="file" id="uploadFile" (change)="onFileSelected($event)" name="uploadFile"/>
+         <input type="file" id="uploadFile" (change)="onFileSelected($event)" placeholder="Upload file" accept=".pdf,.doc,.docx">
         </div>
       </mat-form-field>
+      <div style="margin: 10px;">
       <button mat-raised-button (click)="uploadFiles();" color="primary" style="margin-left: 400px;">Submit</button>
+    </div>
     </div>
   </div>
 </div>

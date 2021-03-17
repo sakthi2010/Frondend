@@ -23,6 +23,7 @@
     "@angular/router": "~10.0.6",
     "bootstrap": "^4.5.3",
     "jquery": "^3.5.1",
+    "ngx-doc-viewer": "^1.4.1",
     "ngx-toastr": "^13.2.0",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
