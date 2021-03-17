@@ -38,7 +38,7 @@ password: string;
     this.loginService.getLogin(this.loginForm.value).subscribe(res=>{
       console.log("resposne ",res);
       if(res['status']=='Success'){
-          this.router.navigate(['/home']);
+          this.router.navigate(['/upload']);
           let userData=JSON.stringify(res['data']['rows']);
           localStorage.setItem("user_data",userData);
       }
