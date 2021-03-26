@@ -45,7 +45,7 @@ password: string;
     }, 
     
         (err) => {
-            this.toastr.warning('Invalid username or password!');
+            this.toastr.error('Invalid username or password!');
             
     })
       console.log("username ",this.username);
