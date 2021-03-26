@@ -20,10 +20,13 @@ import { FormsModule,ReactiveFormsModule} from '@angular/forms';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { HttpClientModule } from '@angular/common/http';
-import {MatDialogModule} from '@angular/material/dialog';
+import {MatDialogModule } from '@angular/material/dialog';
 import { ToastrModule,ToastContainerModule } from 'ngx-toastr';
 import { NgxDocViewerModule, } from 'ngx-doc-viewer';
 import { UploadComponent } from './upload/upload.component';
+import { JobsComponent } from './jobs/jobs.component';
+
+
 
 // import {AfterViewInit, ElementRef, ViewChild,} from '@angular/core';
 const routes: Routes = [
@@ -39,7 +42,7 @@ const routes: Routes = [
   {path:"Login",component:LoginComponent},
   {path:"Contact",component:ContactComponent},
   {path:"upload",component:UploadComponent},
- 
+  {path:"Job",component:JobsComponent},
 
   
   
@@ -54,6 +57,7 @@ const routes: Routes = [
     LoginComponent,
     ContactComponent,
     UploadComponent,
+    JobsComponent,
     
     
     
