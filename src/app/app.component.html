@@ -1,6 +1,7 @@
 <meta name=viewport content='width=475'>
 <mat-toolbar color="primary" width="100%">
     <mat-toolbar-row>
+      
              <img src="../assets/logo.jpeg" width="100px" height="60px"/>
         <span class="example-spacer"></span>
                 <a mat-button routerLink="home">Home</a> 
@@ -8,10 +9,11 @@
     <a mat-button routerLink="services">service</a>
            <button mat-button [matMenuTriggerFor]="belowMenu">Jobs</button>
 <mat-menu #belowMenu="matMenu" yPosition="below">
-  <button mat-menu-item data-toggle="modal" data-target="#myModal">Voice Technologies</button>
-  <button type="button" #closebutton class="close" data-dismiss="modal">&times;</button>
-         
-  <button mat-menu-item>Image Analytices</button>
+  <button mat-menu-item data-toggle="modal" data-target="#myModal">Java J2Ee</button> 
+  <button mat-menu-item>IOS</button>
+  <button mat-menu-item>Android</button>
+  <button mat-menu-item>Micro services</button>
+  <button mat-menu-item>Data Stage</button>
 </mat-menu>
     <a mat-button routerLink="Contact">Contact</a>
     <a mat-button routerLink="Login">Login</a>
