@@ -23,11 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatDialogModule } from '@angular/material/dialog';
 import { ToastrModule,ToastContainerModule } from 'ngx-toastr';
 import { NgxDocViewerModule, } from 'ngx-doc-viewer';
-import { UploadComponent } from './upload/upload.component';
-import { JobsComponent } from './jobs/jobs.component';
-
-
-
+import { UplaodComponent } from './uplaod/uplaod.component';
 // import {AfterViewInit, ElementRef, ViewChild,} from '@angular/core';
 const routes: Routes = [
 
@@ -41,8 +37,7 @@ const routes: Routes = [
   {path:"services",component:ServicesComponent},
   {path:"Login",component:LoginComponent},
   {path:"Contact",component:ContactComponent},
-  {path:"upload",component:UploadComponent},
-  {path:"Job",component:JobsComponent},
+  {path:"upload",component:UplaodComponent},
 
   
   
@@ -56,9 +51,7 @@ const routes: Routes = [
     ServicesComponent,
     LoginComponent,
     ContactComponent,
-    UploadComponent,
-    JobsComponent,
-    
+    UplaodComponent,
     
     
     
@@ -78,9 +71,9 @@ const routes: Routes = [
      HttpClientModule,MatDialogModule, 
      ReactiveFormsModule,ToastContainerModule,
      ToastrModule.forRoot({
-      timeOut: 3000,
-     positionClass: 'toast-top-right',
-     preventDuplicates: false,
+      timeOut: 10000,
+     positionClass: 'toast-buttom-right',
+     preventDuplicates: true,
      }),
      NgxDocViewerModule
   ],
