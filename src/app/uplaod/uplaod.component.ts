@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginServiceService } from '../services/login-service.service';
 
 @Component({
   selector: 'app-uplaod',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UplaodComponent implements OnInit {
 
-  constructor() { }
+  filesList : any =[];
+
+  constructor(
+    private loginService : LoginServiceService) { }
 
   ngOnInit(): void {
+    this.getFiles();
+  }
+
+  getFiles(){
+    this.loginService.getUploadedFiles().subscribe((res)=>{
+      console.log("files ",res);
+      this.filesList=res;
+    })
   }
 
 }

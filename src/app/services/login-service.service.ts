@@ -30,4 +30,9 @@ export class LoginServiceService {
       
     });
   }
+
+  getUploadedFiles(){
+    return this.http.get('https://niranaapi.nstore.in/api/getDocument');
+  }
+
 }

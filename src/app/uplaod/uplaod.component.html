@@ -1,8 +1,27 @@
 <div class="row">
-    <div class="col-md-3">
-    </div>
-        <div class="col-md-8">
-        <h2 align="center">Resume file....</h2><br>
+    <!-- <div class="col-md-3">
+    </div> -->
+        <div class="col-md-12">
+        <h2 align="center">Uploaded Documents</h2><br>
         
 </div>
 </div>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">S No</th>
+        <th scope="col"> Date</th>
+        <!-- <th scope="col">Resume</th> -->
+        <th scope="col">Download</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let f of filesList ">
+        <th scope="row">1</th>
+        <td>{{f.created_at | date}}</td>
+        <!-- <td>{{Otto}}</td> -->
+        <td><a href="{{f.document_url}}">Download</a></td>
+      </tr>
+     
+    </tbody>
+  </table>
