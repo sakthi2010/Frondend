@@ -15,7 +15,7 @@
 
 }
 .mat-form-field {
-  margin: 20px 0;
+  //margin: 20px 0;
   width: 200px !important;
 }
 
@@ -39,4 +39,26 @@
   height: 100%;
   cursor: pointer;
   position: absolute;
+}
+.form-group {
+	margin-bottom: 16px;
+}
+.container {
+	background: #fff;
+	// \\box-shadow: 0 2px 4px #888;
+	margin: auto;
+	padding: 16px;
+	max-width: 600px;
+}
+label {
+	display: block;
+	font-weight: 700;
+	margin: 0 0 4px 0;
+	min-width: 100px;
+}
+.resume, textarea {
+	
+	padding: 4px 0;
+	width: 100%;
+	-webkit-appearance: none;
 }

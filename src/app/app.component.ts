@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ViewChild, ElementRef } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { LoginServiceService } from './services/login-service.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +14,7 @@ export class AppComponent implements OnInit {
   userData : any = [];
   uploadedFiles : any=[];
   uploadForm : FormGroup;
+    submitted = false;
 //   userData = {createdAt: undefined,
 //   firstName:undefined,
 //   hash: undefined,
@@ -24,15 +26,34 @@ export class AppComponent implements OnInit {
 // };
 @ViewChild('closebutton') closebutton;
 
-  constructor(private fb : FormBuilder,private service : LoginServiceService){}
+  constructor(private fb : FormBuilder,private service : LoginServiceService,
+    private toastr:ToastrService,){}
 
   ngOnInit(): void {
     this.getUserdata();
     this.uploadForm=this.fb.group({
-      files : ['',Validators.required]
+      files : ['',Validators.required],
+      name: ['', Validators.required],
+     phone: ['', Validators.required],
+     email: ['', Validators.required],
     })
-  }
+   
+  }  onSubmit() {
+    this.submitted = true;
 
+    // stop here if form is invalid
+    if (this.uploadForm.invalid) {
+        return;
+    }
+
+    // display form values on success
+    // alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.uploadForm.value, null, 3));
+}
+
+onReset() {
+    this.submitted = false;
+    this.uploadForm.reset();
+}
   public onClose() {
     this.closebutton.nativeElement.click();
   }
@@ -55,6 +76,14 @@ export class AppComponent implements OnInit {
   }
 
   uploadFiles(){
+    console.log("uploadfiles ");
+    if(this.uploadForm.value.name=="" || this.uploadForm.value.name==undefined){
+      this.toastr.warning('Please enter all the values to submit!');
+    }
+    if(!this.uploadForm.valid){
+      this.toastr.warning('Please enter all the values to submit!');
+      return false;
+    }
     console.log(this.uploadForm.value.files);
     let file = this.uploadForm.value;
     this.service.uploadFiles(file).subscribe(res=>{
