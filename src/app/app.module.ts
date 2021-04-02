@@ -24,6 +24,7 @@ import {MatDialogModule } from '@angular/material/dialog';
 import { ToastrModule,ToastContainerModule } from 'ngx-toastr';
 import { NgxDocViewerModule, } from 'ngx-doc-viewer';
 import { UplaodComponent } from './uplaod/uplaod.component';
+import { JobsComponent } from './jobs/jobs.component';
 // import {AfterViewInit, ElementRef, ViewChild,} from '@angular/core';
 const routes: Routes = [
 
@@ -38,7 +39,7 @@ const routes: Routes = [
   {path:"Login",component:LoginComponent},
   {path:"Contact",component:ContactComponent},
   {path:"upload",component:UplaodComponent},
-
+  {path:"jobs",component:JobsComponent},
   
   
  
@@ -52,6 +53,7 @@ const routes: Routes = [
     LoginComponent,
     ContactComponent,
     UplaodComponent,
+    JobsComponent ,
     
     
     

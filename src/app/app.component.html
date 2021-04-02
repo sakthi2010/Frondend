@@ -1,26 +1,28 @@
 <meta name=viewport content='width=485'>
-<mat-toolbar color="primary" width="100%">
+<mat-toolbar color="primary" width="100%" >
     <mat-toolbar-row>
              <img src="../assets/logo.jpeg" width="100px" height="60px"/>
-        <span class="example-spacer"></span>
+                     <span class="example-spacer"></span>
                 <a mat-button routerLink="home">Home</a> 
                 <a mat-button routerLink="About">About Us</a>
     <a mat-button routerLink="services">service</a>
-           <button mat-button [matMenuTriggerFor]="belowMenu">Jobs</button>
-<mat-menu #belowMenu="matMenu" yPosition="below">
+    <a mat-button routerLink="jobs">Jobs</a>
+           <!-- <button mat-button [matMenuTriggerFor]="belowMenu">Jobs</button> -->
+<!-- <mat-menu #belowMenu="matMenu" yPosition="below">
   <button mat-menu-item data-toggle="modal" data-target="#myModal">Java J2EE</button>
   <button type="button" #closebutton class="close" data-dismiss="modal">&times;</button>
          
   <button mat-menu-item data-toggle="modal" data-target="#myModal">IOS</button>
   <button mat-menu-item data-toggle="modal" data-target="#myModal">Android</button>
   <button mat-menu-item data-toggle="modal" data-target="#myModal">Micro Service</button>
-  <button mat-menu-item data-toggle="modal" data-target="#myModal">Data Stage</button>
-</mat-menu>
+  <button mat-menu-item data-toggle="modal" data-target="#myModal">Data Stage</button> -->
+<!-- </mat-menu> -->
 
     <a mat-button routerLink="Contact">Contact</a>
     <a mat-button routerLink="Login">Login</a>
     <a mat-button routerLink="Upload"></a>
-    
+    <a mat-button routerLink="Jobs"></a>
+             
        </mat-toolbar-row>
 </mat-toolbar>
  <div class="modal" id="myModal">
@@ -79,5 +81,4 @@
     </div>
   </div>
 </div>
-
 <router-outlet></router-outlet>

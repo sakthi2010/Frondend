@@ -1,1 +1,75 @@
-<p>jobs works!</p>
+
+<div style="margin-left: 20px;margin-right:20px;">
+      <h2>Jobs Available</h2>
+      <div *ngFor="let f of jobs; let i = index " >
+      <h3><b>Title : </b>{{f.tittle}}</h3>
+      
+            <h3><b>Description:</b></h3>
+            <div [innerHTML]="f.description"></div>
+            <!-- <p>{{f.description}}</p> -->
+
+<div>
+      <!-- <button mat-menu-item data-toggle="modal" data-target="#myModal">Apply</button> -->
+      <button mat-raised-button data-toggle="modal" data-target="#myModal" color="primary">Apply</button>
+
+    </div>
+    <hr>
+</div>
+</div>
+
+<div class="modal" id="myModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <form [formGroup]="uploadForm">
+          <h2 align="center">Select Resume..</h2>
+                <div class="resume" >
+                  <!-- <form [formGroup]="registerForm" (ngSubmit)="onSubmit()"> -->
+                        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" formControlName="name" class="form-control" />
+                        <!-- <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                            <div *ngIf="f.Name.errors.required"> Name is required</div>
+                        </div> -->
+          </div>
+          <div class="form-group">
+            <label for="email">Email </label>
+            <input type="text" formControlName="email" class="form-control"/>
+                        <!-- <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                            <div *ngIf="f.email.errors.required"> Name is required</div>
+                        </div> -->
+          </div>
+          <div class="form-group">
+            <label for="Phone">PhoneNo </label>
+            <input type="text" formControlName="phone" class="form-control"/>
+                        <!-- <div *ngIf="submitted && f.Phone.errors" class="invalid-feedback">
+                            <div *ngIf="f.Phone.errors.required"> Name is required</div>
+                        </div> -->
+          </div>
+        <!-- </form> -->
+        </div>
+     
+          </form>
+        
+          <mat-form-field>
+            <div style="padding: 20px;">
+             
+              <!-- <mat-toolbar> -->
+                <!-- Display files names -->
+              
+                <input matInput readonly name="file" />
+          
+                <!-- Browse Button -->
+               
+                <button mat-raised-button>Update File</button>
+                  <!-- </mat-toolbar> -->
+          
+              <!-- Fetch selected filed on change -->
+             <input type="file" id="uploadFile" (change)="onFileSelected($event)" placeholder="Upload file" accept=".pdf,.doc,.docx">
+            </div>
+          </mat-form-field>
+          <div style="margin: 10px;">
+          <button mat-raised-button (click)="uploadFiles();" color="primary" style="margin-left: 400px;">Submit</button>
+        </div>
+        </div>
+      </div>
+    </div>
