@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {MatDialog} from '@angular/material/dialog';
 import { LoginServiceService } from '../services/login-service.service';
 import {ViewChild, ElementRef } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { UploadDocumentComponent } from '../upload-document/upload-document.component';
 
 @Component({
   selector: 'app-jobs',
@@ -21,7 +22,7 @@ export class JobsComponent implements OnInit {
 
   constructor(
     private loginService : LoginServiceService,private fb : FormBuilder,private service : LoginServiceService,
-    private toastr:ToastrService,) { }
+    private toastr:ToastrService,public dialog: MatDialog) { }
 
     ngOnInit(): void {
   this.discription();
@@ -92,6 +93,17 @@ discription(){
     console.log("files ",res);
     this.jobs=res;
   })
+}
+
+uploadDocument(data){
+  const dialogRef = this.dialog.open(UploadDocumentComponent, {
+    width: '500px',
+    data: {type : data}
+  });
+
+  dialogRef.afterClosed().subscribe(result => {
+    console.log('The dialog was closed');
+  });
 }
 
 getUserdata(){

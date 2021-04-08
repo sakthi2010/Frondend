@@ -20,10 +20,9 @@
         
         
       </tr>
-
     </thead>
     <tbody>
-      <tr *ngFor="let f of filesList; let i = index ">
+    <tr *ngFor="let f of filesList; let i = index ">
         <td scope="row">{{i+1}}</td>
         <td>{{f.created_at | date}}</td>
         <td>{{f.title}}</td>
@@ -32,7 +31,6 @@
         <td>{{f.email}}</td>
         <td>{{f.Status}}</td>
         <td><a href="{{f.document_url}}" target="_blank">Download</a></td>
-        
       </tr>
      
     </tbody>

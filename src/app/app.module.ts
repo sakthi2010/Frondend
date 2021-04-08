@@ -25,6 +25,8 @@ import { ToastrModule,ToastContainerModule } from 'ngx-toastr';
 import { NgxDocViewerModule, } from 'ngx-doc-viewer';
 import { UplaodComponent } from './uplaod/uplaod.component';
 import { JobsComponent } from './jobs/jobs.component';
+import { AgentComponent } from './agent/agent.component';
+import { UploadDocumentComponent } from './upload-document/upload-document.component';
 // import {AfterViewInit, ElementRef, ViewChild,} from '@angular/core';
 const routes: Routes = [
 
@@ -40,9 +42,7 @@ const routes: Routes = [
   {path:"Contact",component:ContactComponent},
   {path:"upload",component:UplaodComponent},
   {path:"jobs",component:JobsComponent},
-  
-  
- 
+  { path : 'upload-document', component : UploadDocumentComponent }
 ];
 @NgModule({
   declarations: [
@@ -53,7 +53,9 @@ const routes: Routes = [
     LoginComponent,
     ContactComponent,
     UplaodComponent,
-    JobsComponent ,
+    JobsComponent,
+    AgentComponent,
+    UploadDocumentComponent ,
     
     
     

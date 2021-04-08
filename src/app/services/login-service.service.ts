@@ -22,6 +22,7 @@ export class LoginServiceService {
     payload.append('name', data.name);
     payload.append('email', data.email);
     payload.append('phone', data.phone);
+    payload.append('type',data.type);
     console.log("data payload-------> ",payload);
     // data.files.forEach(data.files, (item) => {
       // payload.append('files',data.files);
