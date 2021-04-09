@@ -41,5 +41,7 @@ export class LoginServiceService {
   gettitle(){
     return this.http.get('https://niranaapi.nstore.in/api/getJD');
   }
-
+updateDocumentStatus(data){
+  return this.http.post('https://niranaapi.nstore.in/api/updateDocument',data);
+}
 }

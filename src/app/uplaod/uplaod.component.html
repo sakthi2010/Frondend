@@ -15,8 +15,8 @@
         <th scope="col">Name</th> 
          <th scope="col">Mobile</th> 
          <th scope="col">Email </th> 
-         <th scope="col">Status</th>
         <th scope="col">Download</th>
+        <th scope="col">Status</th>
         
         
       </tr>
@@ -30,10 +30,18 @@
         <td>{{f.name}}</td>
         <td>{{f.mobile}}</td>
         <td>{{f.email}}</td>
-        <td>{{f.Status}}</td>
         <td><a href="{{f.document_url}}" target="_blank">Download</a></td>
-        
-      </tr>
+        <td><mat-form-field>
+         <select matNativeControl required [(ngModel)]="f.doc_status" (change)="updateDocStatus(f,f.doc_status)">
+          <option >Select</option>
+          <option value="new">New</option>
+          <option value="selected">Selected</option>
+          <option value="rejected">Rejected</option>
+          <option value="recruited">Recruited</option>
+        </select>
+      </mat-form-field>
+        </td>
+              </tr>
      
     </tbody>
   </table>

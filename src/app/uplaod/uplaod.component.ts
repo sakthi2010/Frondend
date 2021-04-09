@@ -23,5 +23,17 @@ export class UplaodComponent implements OnInit {
       this.filesList=res;
     })
   }
+  updateDocStatus(data,status){
+  var post_data={
+    id : data.id,
+    doc_status : status
+  }
+  console.log("updatstatus ",post_data);
+  this.loginService.updateDocumentStatus(post_data).subscribe((res)=>{
+    console.log("files ",res);
+    this.getFiles();
+  })
+}
 
 }
+

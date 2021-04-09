@@ -88,6 +88,7 @@ onReset() {
     let file = this.uploadForm.value;
     this.service.uploadFiles(file).subscribe(res=>{
       console.log("upload res ",res);
+      
       // this.onClose();
     })
   }

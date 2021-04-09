@@ -42,7 +42,8 @@ const routes: Routes = [
   {path:"Contact",component:ContactComponent},
   {path:"upload",component:UplaodComponent},
   {path:"jobs",component:JobsComponent},
-  { path : 'upload-document', component : UploadDocumentComponent }
+  { path : 'upload-document', component : UploadDocumentComponent },
+  {path:"agent",component:AgentComponent}
 ];
 @NgModule({
   declarations: [
