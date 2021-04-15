@@ -32,7 +32,7 @@
         <td>{{f.mobile}}</td>
         <td>{{f.email}}</td>
         <td><a href="{{f.document_url}}" target="_blank">Download</a></td>
-        <td><mat-form-field>
+        <td *ngIf="userData.user_type=='Admin'"><mat-form-field>
          <select matNativeControl required [(ngModel)]="f.doc_status" (change)="updateDocStatus(f,f.doc_status)">
           <option >Select</option>
           <option value="new">New</option>
@@ -42,6 +42,7 @@
         </select>
       </mat-form-field>
         </td>
+        <td *ngIf="userData.user_type=='Agent'">{{f.doc_status}}</td>
        <td>  <button mat-raised-button (click)="deleteDocStatus(f.id)" color="primary">Delete</button></td>
               </tr>
      

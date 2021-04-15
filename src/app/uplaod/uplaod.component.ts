@@ -9,12 +9,19 @@ import { LoginServiceService } from '../services/login-service.service';
 export class UplaodComponent implements OnInit {
 
   filesList : any =[];
+  userData : any=[];
 
   constructor(
     private loginService : LoginServiceService) { }
 
   ngOnInit(): void {
-    this.getFiles();
+    this.userData=JSON.parse(localStorage.getItem('user_data'));
+    console.log("localstore ",this.userData);
+    if(this.userData.user_type=='Agent'){
+    this.getFilesForAgents();
+    }else {
+      this.getFiles();  
+    }
   }
 
   getFiles(){
@@ -23,6 +30,14 @@ export class UplaodComponent implements OnInit {
       this.filesList=res;
     })
   }
+
+  getFilesForAgents(){
+    this.loginService.getUploadedFilesForAgent().subscribe((res)=>{
+      console.log("files 2 ",res);
+      this.filesList=res;
+    })
+  }
+
   updateDocStatus(data,status){
   var post_data={
     id : data.id,

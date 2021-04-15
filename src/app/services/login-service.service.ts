@@ -15,6 +15,7 @@ export class LoginServiceService {
   }
 
   uploadFiles(data) {
+    var userdata=JSON.parse(localStorage.getItem('user_data'));
     console.log(data);
     const url = 'https://niranaapi.nstore.in/upload';
     let payload:any = new FormData();
@@ -23,6 +24,7 @@ export class LoginServiceService {
     payload.append('email', data.email);
     payload.append('phone', data.phone);
     payload.append('type',data.type);
+    payload.append('id',userdata.id);
     console.log("data payload-------> ",payload);
     // data.files.forEach(data.files, (item) => {
       // payload.append('files',data.files);
@@ -38,6 +40,14 @@ export class LoginServiceService {
   getUploadedFiles(){
     return this.http.get('https://niranaapi.nstore.in/api/getDocument');
   }
+
+  getUploadedFilesForAgent(){
+    var userdata=JSON.parse(localStorage.getItem('user_data'));
+    console.log("userdata 2 ",userdata);
+    return this.http.get('https://niranaapi.nstore.in/api/getUserDocument?id='+userdata.id);
+  }
+
+  
   gettitle(){
     return this.http.get('https://niranaapi.nstore.in/api/getJD');
   }
