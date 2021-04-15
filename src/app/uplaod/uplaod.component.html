@@ -17,6 +17,7 @@
          <th scope="col">Email </th> 
         <th scope="col">Download</th>
         <th scope="col">Status</th>
+        <th scope="col">Delete</th>
         
         
       </tr>
@@ -41,6 +42,7 @@
         </select>
       </mat-form-field>
         </td>
+       <td>  <button mat-raised-button (click)="deleteDocStatus(f.id)" color="primary">Delete</button></td>
               </tr>
      
     </tbody>

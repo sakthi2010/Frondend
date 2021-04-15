@@ -1,16 +1,14 @@
-.align{
-  width: 391px;
-}
 
- 
 
 .row{
+  
+  min-height: 100vh;
+  background: url('../../assets/ligin.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.align{
+  margin-top: 50px;
   margin-left: 50px;
-   margin-top: 50px;
-   
-  }
-
-.design-img{
-  height: 500px;
-  width: 100%;
 }

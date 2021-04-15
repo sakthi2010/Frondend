@@ -4,6 +4,7 @@
   }
   .example-spacer {
         flex:  1 1 auto;
+        
   }
   
   .mat-drawer-container {
@@ -20,15 +21,13 @@
 }
 
 .mat-toolbar-row {
+
   height: auto !important;
   background: transparent;
   background-size:contain;
   
 }
 
-.mat-form-field {
-  width: 10%;
-}
 
 #uploadFile {
   top: 0px;
@@ -51,7 +50,7 @@
 	max-width: 600px;
 }
 label {
-	display: block;
+	display:block;
 	font-weight: 700;
 	margin: 0 0 4px 0;
 	min-width: 100px;

@@ -34,6 +34,15 @@ export class UplaodComponent implements OnInit {
     this.getFiles();
   })
 }
-
+ deleteDocStatus(data){
+    var delete_data={
+      id : data
+      
+    }
+    console.log("deletestatus ",delete_data);
+    this.loginService.deleteDocumentStatus(delete_data).subscribe((res)=>{
+      console.log("files ",res);
+      this.getFiles();
+    })
 }
-
+}

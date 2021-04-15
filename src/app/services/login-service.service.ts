@@ -44,4 +44,9 @@ export class LoginServiceService {
 updateDocumentStatus(data){
   return this.http.post('https://niranaapi.nstore.in/api/updateDocument',data);
 }
+deleteDocumentStatus(data){
+  
+    return this.http.post('https://niranaapi.nstore.in/api/deleteDocument',data);
+  }
+
 }
